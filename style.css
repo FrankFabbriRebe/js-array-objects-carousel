@@ -3,3 +3,55 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.container  {
+    background-color: blue;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carosel    {
+    width: 50%;
+}
+
+.item img    {
+    width: 100%;
+}
+
+.item   {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+.items_container    {
+    position: relative;
+}
+
+.up   {
+    position: absolute;
+    top: 10px;
+    transform: translate(-50%);
+    left: 50%;
+}
+
+.down {
+    position: absolute;
+    bottom: 10px;
+    transform: translate(-50%);
+    left: 50%;
+}
+
+.hidden {
+    display: none;
+}
+
+button  {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
