@@ -30,19 +30,32 @@ const images = [
     } 
 ];
 
-// selection of all the elemnts with item class
+// REFERENCE HTML ELEMENTS
+// create array items
 const items = document.getElementsByClassName("item");
-//console.log(items);
-
 // selection of the buttons
 const up = document.querySelector(".up");
-//console.log(up);
-
 const down = document.querySelector(".down");
-//console.log(down);
+const carosel = document.querySelector(".carosel");
+const itemContainer = document.querySelector(".item_container");
 
 let activeItem = 0;
 
+// Aggiungo immagini al DOM in modo dinamico
+for (let i = 0; i < images.length; i++) {
+
+    const item = `
+    <div class="item">
+        <img src="${images[i].image}" alt="">
+        <div class="title">${images[i].title}</div>
+        <div class="subtitle">${images[i].text}</div>
+    </div>`;
+
+
+    itemContainer.innerHTML += item;
+
+}
+ 
 //events on click up button
 up.addEventListener("click", function() {
 
@@ -58,8 +71,8 @@ up.addEventListener("click", function() {
 
     }
 
-     //delete up button
-     if (activeItem === items.length - 1)    {
+    //delete up button
+    if (activeItem === items.length - 1)    {
         up.classList.add("hidden");
     }
 
@@ -71,7 +84,7 @@ up.addEventListener("click", function() {
 // events on click down button
 down.addEventListener("click", function() {
 
-   if (activeItem > 0) {
+if (activeItem > 0) {
 
         //delete class active to the element
         items[activeItem].classList.remove("active");
@@ -81,7 +94,7 @@ down.addEventListener("click", function() {
         //add class active to the next element
         items[activeItem].classList.add("active");
 
-   }
+}
 
     //delete down button
     if (activeItem === 0)   {
@@ -92,3 +105,11 @@ down.addEventListener("click", function() {
     up.classList.remove("hidden");
 
 });
+
+
+
+
+
+
+
+

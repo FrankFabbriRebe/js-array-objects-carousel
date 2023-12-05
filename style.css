@@ -15,21 +15,25 @@
 
 .carosel    {
     width: 50%;
+    height: 50%;
+    position: relative;
 }
 
 .item img    {
     width: 100%;
+    height: 100%;
 }
 
 .item   {
-    display: none;
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    /* debug */
+    border: 2px solid pink;
 }
 
 .active {
     display: block;
-}
-.items_container    {
-    position: relative;
 }
 
 .up   {
